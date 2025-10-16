@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrasi Sistem Jaringan XII TKJ D</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* RESET DASAR */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* TATA LETAK & FONT DASAR */
+        body {
+            font-family: 'Poppins', sans-serif; 
+            line-height: 1.6;
+            background-color: floralwhite; /* Warna latar belakang abu-abu muda */
+            color: black;
+        }
+
+        /* HEADER (Hero Section) */
+        .hero {
+            background-color: lightpink; 
+            color: black;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        /* KONTEN UTAMA & CONTAINER */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* KARTU PROFIL */
+        .profile-card {
+            background: floralwhite;
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex; /* Menggunakan Flexbox untuk tata letak berdampingan */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Bayangan yang lebih menonjol */
+            transition: transform 0.3s;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px); /* Efek saat kursor diarahkan (hover) */
+        }
+
+        /* AREA FOTO */
+        .photo-area {
+            flex: 1; /* Ambil 1 bagian ruang */
+            padding: 30px;
+            background-color: lightpink; /* Latar belakang untuk area foto */
+            display: flex;
+            justify-content: center;
+            align-items: right;
+            top: 0%;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%; /* Membuat foto berbentuk lingkaran */
+            object-fit: cover;
+            border: 5px solid #ff69b4; /* Garis tepi foto dengan warna utama */
+        }
+
+        /* AREA INFORMASI */
+        .info-area {
+            flex: 2; /* Ambil 2 bagian ruang (lebih besar dari foto) */
+            padding: 30px;
+        }
+
+        .info-area h2 {
+            color: lightpink;
+            border-bottom: 3px solid #000000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+
+        /* DETAIL INFO */
+        .detail {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 10px;
+        }
+
+        .detail:last-child {
+            border-bottom: none; /* Hilangkan garis pada item terakhir */
+        }
+
+        .label {
+            font-weight: 600; /* Label lebih tebal */
+            width: 150px; /* Lebar tetap untuk label */
+            color: black;
+        }
+
+        .value {
+            flex: 1; /* Nilai mengisi sisa ruang */
+            color: black;
+        }
+
+
+        /* FOOTER */
+        footer {
+            background-color: lightpink;
+            color: black;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        /* MEDIA QUERIES (Responsif) */
+        @media (max-width: 768px) {
+            .profile-card {
+                flex-direction: column; /* Ubah tata letak menjadi vertikal */
+            }
+
+            .photo-area {
+                padding: 20px;
+                top: ;
+            }
+
+            .info-area {
+                padding: 20px;
+            }
+
+            .detail {
+                flex-direction: column; /* Tumpuk label dan nilai */
+            }
+
+            .label {
+                width: 100%;
+                margin-bottom: 3px;
+            }
+        .materi-box {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .materi-box h3 {
+            color: black; /* Warna hijau untuk sub judul */
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #28a745;
+            padding-bottom: 5px;
+        }
+        
+        .materi-box p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .materi-box img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: hotpink;
+            color: black;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        /* Media Queries (Responsif) */
+        @media (max-width: 768px) {
+            nav ul { flex-direction: column; gap: 10px; }
+            .profile-card { flex-direction: column; }
+            .photo-area { margin-bottom: 20px; }
+            .info-area { padding-top: 0; }
+            .detail { flex-direction: column; }
+            .label { width: 100%; margin-bottom: 3px; }    </style>
+    </head>
+<body>
+
+
+    <header class="hero">
+        <h1>Administrasi Sistem Jaringan XII TKJ D</h1>
+        <p>Profil Siswa Administrator Jaringan</p>
+    </header>
+
+    <main class="container">
+        <section class="profile-card">
+            <div class="photo-area">
+                <img src="foto.jpg" alt="Foto Pribadi" class="profile-photo"> 
+            </div>
+            <div class="info-area">
+                <h2>Profil Pribadi</h2>
+                
+                <div class="detail">
+                    <p class="label">Nama Lengkap:</p>
+                    <p class="value">Aisyah Rifdah</p>
+                </div>
+                
+                <div class="detail">
+                    <p class="label">Kelas/Jurusan:</p>
+                    <p class="value">XII Teknik Komputer dan Jaringan D</p>
+                </div>
+
+                <div class="detail">
+                    <p class="label">Alamat:</p>
+                    <p class="value">Jl Saidan Rt02/09</p>
+                </div>
+
+                <div class="detail">
+                    <p class="label">Cita-Cita:</p>
+                    <p class="value">Pengusaha</p>
+                </div>
+                
+                <div class="detail">
+                    <p class="label">Hobi:</p>
+                    <p class="value">Jalan-Jalan</p>
+                </div>
+<div class="detail">
+                    <p class="label">Makanan Fav:</p>
+                    <p class="value">Pasta</p>
+                </div>
+                
+<section class="container" id="rangkuman-cp">
+        <h2 class="section-title">Rangkuman Materi: Control Panel Hosting</h2>
+        <div class="materi-box">
+            <h3>Apa itu Control Panel?</h3>
+            <p>Control Panel (cPanel, Plesk, dll.) adalah antarmuka berbasis web yang dirancang untuk menyederhanakan pengelolaan website dan server hosting. Panel ini memungkinkan pengguna untuk melakukan tugas-tugas kompleks tanpa perlu pengetahuan mendalam tentang baris perintah (CLI).</p>
+        </div>
+        
+        <div class="materi-box">
+            <h3>Fungsi Utama Control Panel</h3>
+            <ul>
+                <li>Mengelola File: Mengakses File Manager untuk mengunggah, mengedit, dan menghapus file website.</li>
+                <li>Database: Membuat dan mengelola database (MySQL/MariaDB) menggunakan phpMyAdmin.</li>
+                <li>Email: Membuat akun email profesional (@namadomainanda.com).</li>
+                <li>Domain: Menambah subdomain, domain tambahan, dan mengelola DNS.</li>
+                <li>Security: Menginstal sertifikat SSL (HTTPS) dan mengatur firewall.</li>
+            </ul>
+        </div>
+
+        <div class="materi-box">
+            <h3>Contoh Tampilan Control Panel</h3>
+            <p>Gambar berikut menampilkan contoh tampilan utama cPanel yang berisi berbagai menu manajemen.</p>
+            <img src="ss.JPG" width="200px" height="200px"> 
+        </div>
+    </section>
+
+    <section class="container" id="rangkuman-hosting">
+        <h2 class="section-title">Rangkuman Materi: Pengantar Hosting</h2>
+        <div class="materi-box">
+            <h3>Definisi Web Hosting</h3>
+            <p>Web Hosting adalah layanan penyewaan ruang pada server agar website atau aplikasi web Anda dapat diakses melalui internet. Ibarat menyewa lahan parkir di gedung yang beroperasi 24/7, server hosting menyimpan semua file, gambar, dan database website Anda.</p>
+        </div>
+        
+        <div class="materi-box">
+            <h3>Komponen Dasar Hosting</h3>
+            <p>Gambar berikut menampilkan komponen-komponen dari web hosting.</p>
+            <img src="komponen.jpg" width="200px" height="200px"> 
+            <ul>
+                <li>Domain: Alamat unik website Anda (contoh: google.com). </li>
+                <li>Server:Komputer fisik (atau virtual) yang menyimpan file hosting.</li>
+                <li>Bandwidth: Batas transfer data yang diizinkan antara website dan pengunjung.</li>
+                <li>Uptime:Persentase waktu server selalu aktif dan dapat diakses (ideal: 99.9%). </li>
+            </ul>
+        </div>
+
+        <div class="materi-box">
+            <h3>Jenis-Jenis Hosting</h3>
+            <p>Ada beberapa jenis hosting utama yang wajib diketahui:</p>
+            <img src="tipe-tipe-web-hosting-1.webp" width="200px" height="200px"> 
+            <ul>
+                <li>Shared Hosting: Paling umum dan murah. Satu server digunakan bersama banyak pengguna (seperti kos-kosan). </li>
+                <li>VPS (Virtual Private Server): Pembagian server fisik menjadi beberapa server virtual yang independen. Lebih stabil dan fleksibel (seperti apartemen). </li>
+                <li>Dedicated Server:Menyewa seluruh server fisik hanya untuk satu pengguna. Kontrol penuh dan kinerja maksimal (seperti rumah pribadi). </li>
+            </ul> 
+        </div>
+    </section>
+            
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dibuat oleh Siswa ASJ XII TKJ D | Belajar HTML & CSS</p>
+    </footer>
+
+</body>
+</html>
